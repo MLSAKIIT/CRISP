@@ -42,6 +42,16 @@
             flex: 1;
             min-width: 45%;
         }
+
+        .hero-section {
+            background: url('https://via.placeholder.com/1200x600') no-repeat center center/cover;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
     </style>
 </head>
 <body class="min-h-screen bg-black text-white">
@@ -57,20 +67,31 @@
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-center space-x-4">
                         <a href="#" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md font-medium">Recent</a>
+                        <a href="#about" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md font-medium">About</a>
+                        <a href="#contact" class="text-gray-300 hover:text-blue-400 px-3 py-2 rounded-md font-medium">Contact</a>
                     </div>
                 </div>
             </div>
         </div>
     </nav>
 
+    <!-- Hero Section -->
+    <section class="hero-section gradient-bg text-center">
+        <div>
+            <h1 class="text-4xl font-bold mb-4">Welcome to CRISP</h1>
+            <p class="text-xl mb-8">Modern Request Logger for your development needs</p>
+            <a href="#recent-requests" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-lg">Get Started</a>
+        </div>
+    </section>
+
     <!-- Main Content -->
     <main class="pt-24 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <h1 class="text-4xl font-bold text-gray-100 mb-8">Recent Requests</h1>
+        <h2 id="recent-requests" class="text-4xl font-bold text-gray-100 mb-8">Recent Requests</h2>
         
         <!-- Request Cards -->
         <section>
             {% for entry in entries %}
-                <article class="entry flex-container">
+                <article class="entry flex-container card-hover">
                     <div class="box flex-item">
                         <h2 class="entry__title">Request</h2>
                         <p class="entry__content"><pre style="overflow-x: auto; white-space: pre-wrap; word-wrap: break-word; font-size: 15px;">{{entry[1]}}</pre></p>
@@ -84,14 +105,31 @@
         </section>
     </main>
 
+    <!-- About Section -->
+    <section id="about" class="bg-gray-800 py-16 text-center text-white">
+        <h2 class="text-3xl font-bold mb-4">About CRISP</h2>
+        <p class="text-xl mb-4">CRISP is a modern and easy-to-use request logger that helps developers track and debug API calls and responses in real-time.</p>
+        <p class="text-lg">It features an intuitive interface and powerful filtering to view requests and responses with ease.</p>
+    </section>
+
     <!-- Footer -->
-    <footer class="bg-blue-800 text-white">
-        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <footer id="contact" class="bg-blue-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">About</h3>
+                    <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+                    <p>If you have any questions, feel free to reach out to us:</p>
+                    <ul class="mt-4 space-y-2">
+                        <li>Email: <a href="mailto:info@crisp.com" class="text-blue-400">info@crisp.com</a></li>
+                        <li>Phone: +1 (123) 456-7890</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Social</h3>
                     <div class="space-y-2">
-                        <p>Project Wing 2025 Cyber Domain</p>
+                        <a href="#" class="text-blue-400">Twitter</a>
+                        <a href="#" class="text-blue-400">Facebook</a>
+                        <a href="#" class="text-blue-400">GitHub</a>
                     </div>
                 </div>
             </div>
